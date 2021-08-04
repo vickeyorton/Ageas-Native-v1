@@ -78,7 +78,7 @@ const ClaimScreen = ({navigation}) => {
             {driverIssue === "Yes" ? 
 
                 <View style={[styles.borderVertical,styles.qContainer]}>
-                    <Text style={{width:"85%",fontSize:16,textAlign:"justify",}}>Was the incident inside of the UK?</Text>
+                    <Text style={{width:"75%",fontSize:16,textAlign:"justify",}}>Was the incident inside of the UK?</Text>
                     <View style={{flex:1}}>
                         <Switch
                             trackColor={{ false: "#c6c6c6", true: "#8e419c" }}
@@ -93,7 +93,7 @@ const ClaimScreen = ({navigation}) => {
             }
             {driverIssue === "Yes" && q1isEnabled &&
                 <View style={[styles.borderBottom,styles.qContainer]}>
-                    <Text style={{width:"85%",fontSize:16,textAlign:"justify",}}>Was anybody injured as a result of the incident or did it involve a pedestrain, a pedal cyclist or a motor cyclist?</Text>
+                    <Text style={{width:"75%",fontSize:16,textAlign:"justify",}}>Was anybody injured as a result of the incident or did it involve a pedestrain, a pedal cyclist or a motor cyclist?</Text>
                     <View style={{alignItems:"flex-end",flex:1}}>
                         <Switch
                             trackColor={{ false: "#c6c6c6", true: "#8e419c" }}
@@ -107,7 +107,7 @@ const ClaimScreen = ({navigation}) => {
             }
             {driverIssue === "Yes" && q1isEnabled &&
                 <View style={[styles.borderBottom,styles.qContainer]}>
-                    <Text style={{width:"85%",fontSize:16,textAlign:"justify",}}>Were multiple vehicles involved in the incident (more than your vehicle and 1 other?)</Text>
+                    <Text style={{width:"75%",fontSize:16,textAlign:"justify",}}>Were multiple vehicles involved in the incident (more than your vehicle and 1 other?)</Text>
                     <View style={{alignItems:"flex-end",flex:1}}>
                         <Switch
                             trackColor={{ false: "#c6c6c6", true: "#8e419c" }}
@@ -121,7 +121,7 @@ const ClaimScreen = ({navigation}) => {
             }
             {driverIssue === "Yes" && q1isEnabled &&
                 <View style={[styles.borderBottom,styles.qContainer]}>
-                    <Text style={{width:"85%",fontSize:16,textAlign:"justify",}}>Did this incident involve an act of vandalism, malicious damage, fire or theft?</Text>
+                    <Text style={{width:"75%",fontSize:16,textAlign:"justify",}}>Did this incident involve an act of vandalism, malicious damage, fire or theft?</Text>
                     <View style={{alignItems:"flex-end",flex:1}}>
                         <Switch
                             trackColor={{ false: "#c6c6c6", true: "#8e419c" }}

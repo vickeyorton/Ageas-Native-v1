@@ -8,7 +8,7 @@ export default StyleSheet.create({
     checkboxContainer: {
         flexDirection: "row",
         // marginBottom: 20,
-        paddingVertical:30
+        paddingVertical:23
       },
       checkbox: {
         alignSelf: "center",
@@ -65,12 +65,12 @@ export default StyleSheet.create({
     borderBottom:{
       borderBottomWidth:1,
       borderColor:"#000",
-      paddingVertical:10
+      paddingVertical:15
     },
     borderVertical:{
       borderBottomWidth:1,
       borderTopWidth:1,
       borderColor:"#000",
-      paddingVertical:10
+      paddingVertical:15
     }
 });

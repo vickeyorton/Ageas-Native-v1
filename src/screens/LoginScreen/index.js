@@ -63,7 +63,7 @@ const LoginScreen = ({navigation}) => {
                         label="Email Address"
                         onChangeText={(e)=>{handleValidEmail(e)}}
                         value={value}
-                        placeholder="Email Address"
+                        // placeholder="Email Address"
                     />
                     <View style={{alignItems:"flex-end",marginTop:-5}}>
                         <Text style={{fontSize:14,color:"#8e419c"}}>Forgot Email Address?</Text>
@@ -79,7 +79,7 @@ const LoginScreen = ({navigation}) => {
                         label="Password"
                         onChangeText={onChangePass}
                         value={pass}
-                        placeholder="Password"
+                        // placeholder="Password"
                         icon={<MaterialIcon style={{padding:10}} name="remove-red-eye" size={20}></MaterialIcon>}
                         iconPosition="right"
                         secureTextEntry={true}

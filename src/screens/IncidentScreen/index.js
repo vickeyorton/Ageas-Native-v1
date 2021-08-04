@@ -129,7 +129,7 @@ const IncidentScreen = ({navigation}) => {
                 </View> */}
                 <View style={{padding:20}}>
                     <View>
-                        <Text style={{fontSize:18}}>Please tell us when the incident happened*</Text>
+                        <Text style={{fontSize:18}}>Please tell us when the incident happened</Text>
                         <View style={{paddingVertical:20}}>
                             <View style={{paddingBottom:20}}>
                                 <Text style={{fontSize:16}}>Date of incident</Text>
@@ -344,7 +344,7 @@ const IncidentScreen = ({navigation}) => {
                             </View>
                         </View>
                         <View style={{paddingVertical:20}}>
-                            <Text style={{fontSize:18, marginBottom:10}}>Please select your vehicle registration*</Text>
+                            <Text style={{fontSize:18, marginBottom:10}}>Please select your vehicle registration</Text>
                             <View>
                             <TouchableOpacity
                                 style={[styles.regBtn,{backgroundColor:getA1RegBtn()}]}
@@ -367,16 +367,20 @@ const IncidentScreen = ({navigation}) => {
                             label="Closest street to the incident"
                             onChangeText={onChangeStreet}
                             value={street}
-                            placeholder="Street name"/>
+                            labelFontSize={16}
+                            // placeholder="Street name"
+                            />
                             <View style={{padding:5}}></View>
                             <Input
                             label="Closest town to the incident"
                             onChangeText={onChangeTown}
                             value={town}
-                            placeholder="Town name"/>
+                            labelFontSize={16}
+                            // placeholder="Town name"
+                            />
                         </View>
                         <View style={{paddingVertical:20}}>
-                            <Text style={{fontSize:18}}>Please tell us what happened (description that best fits the situation)*</Text>
+                            <Text style={{fontSize:18}}>Please tell us what happened (description that best fits the situation)</Text>
                             <View style={{borderBottomWidth:1,paddingVertical:10}}>
                                 <Picker
                                     selectedValue={selectedSituation}

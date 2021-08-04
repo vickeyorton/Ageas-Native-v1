@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { View,TextInput, Text,ImageBackground,TouchableOpacity,Image } from 'react-native';
+import { View,TextInput, Text,ImageBackground,TouchableOpacity,Image,TouchableWithoutFeedback } from 'react-native';
 import Container from '../../components/common/Container';
 import styles from './styles';
 // import Footer from '../../components/common/Footer';
@@ -133,8 +133,10 @@ const HomeScreen = ({navigation}) => {
                     // </TouchableOpacity>
                     <TouchableOpacity key={index} style={[styles.tabContainer,{ borderRightWidth: checkIndexIsSix(index) ? 1 : 0},{ borderTopWidth: 0},{width:checkIndexGreaterthan(index) ? "33.33%" : "50%"}]}
                     onPress={()=>{navigation.navigate(CLAIM_PAGE)}}>
-                        <Image style={{width:50,height:50}} source={{uri:data.pic}}/>
-                        <Text style={{flex:1,justifyContent:"center",textAlign:"center",fontSize:15}}>{data.name}</Text>
+                        
+                            <Image style={{width:50,height:50}} source={{uri:data.pic}}/>
+                            <Text style={{flex:1,justifyContent:"center",textAlign:"center",fontSize:15}}>{data.name}</Text>
+                        
                     </TouchableOpacity>
                     )
                 })}

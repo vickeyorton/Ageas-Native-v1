@@ -4,7 +4,7 @@ import color from "../../../assets/theme/color";
 export default StyleSheet.create({
     wrapper:{
         height:42,
-        borderColor:color.purple,
+        borderColor:"#2c2c2c",
         borderRadius:4,
         borderBottomWidth:1,
         // borderWidth:1

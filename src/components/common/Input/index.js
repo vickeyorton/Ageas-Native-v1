@@ -3,7 +3,7 @@ import { View,Text, TextInput } from 'react-native';
 import color from '../../../assets/theme/color';
 import styles from './styles';
 
-const Input = ({onChangeText,value,style,placeholder,label, icon, iconPosition,secureTextEntry,...props}) => {
+const Input = ({onChangeText,value,style,placeholder,label, icon, iconPosition,secureTextEntry,labelFontSize,...props}) => {
     const [focused,setFocused] = useState(false);
     const getFlexDirection =() =>{
         if(icon && iconPosition){
@@ -22,10 +22,16 @@ const Input = ({onChangeText,value,style,placeholder,label, icon, iconPosition,s
             return color.purple
         }
     }
+    
+    const getErrorBorder = () =>{
+        if(error){
+            return color.danger
+        }
+    }
 
     return (
         <View style={{paddingVertical:10}}>
-            {label && <Text style={styles.inputLabel}>{label}</Text>}
+            {label && <Text style={[styles.inputLabel,{fontSize:labelFontSize}]}>{label}</Text>}
             <View 
             onFocus={()=>{setFocused(true)}}
             onBlur={()=>{setFocused(false)}}
