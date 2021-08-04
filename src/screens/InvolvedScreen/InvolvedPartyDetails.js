@@ -8,43 +8,51 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import {CONTACT_PAGE, ADDPASSENGER_PAGE, SUMMARY_PAGE} from '../../constants/routeNames';
+import {
+  CONTACT_PAGE,
+  ADDPASSENGER_PAGE,
+  SUMMARY_PAGE,
+} from '../../constants/routeNames';
 import {Linking} from 'react-native';
 import {Picker} from '@react-native-community/picker';
 import {useDispatch} from 'react-redux';
-import {useSelector  } from 'react-redux';
+import {useSelector} from 'react-redux';
 import {GET_INVOLVED} from '../../context/actions';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
-const Involved=({navigation})=> {
+const Involved = ({navigation}) => {
   const {setOptions, toggleDrawer} = useNavigation();
   useEffect(() => {
-      setOptions({
-          headerRight: () => (
-              <TouchableOpacity
-                  // onPress={()=>{toggleDrawer()}}
-              >
-                  <MaterialIcon style={{padding:10}} color="#fff" name="menu" size={25}></MaterialIcon>
-              </TouchableOpacity>
-          ),
-      });
-  }, [])
+    setOptions({
+      headerRight: () => (
+        <TouchableOpacity
+        // onPress={()=>{toggleDrawer()}}
+        >
+          <MaterialIcon
+            style={{padding: 10}}
+            color="#fff"
+            name="menu"
+            size={25}></MaterialIcon>
+        </TouchableOpacity>
+      ),
+    });
+  }, []);
   const dispatch = useDispatch();
   const [ques2Selection, setQues2Selection] = useState('');
   const [val, setVal] = useState(0);
   const [opYes, setOpYes] = useState(true);
   const [opNo, setOpNo] = useState(false);
   const [namesArray, setNamesArray] = useState([]);
-  const addPassObj = useSelector(state=>state.CarReducer.addPassObj);
+  const addPassObj = useSelector(state => state.CarReducer.addPassObj);
   // useEffect(() => {
-    const involvedObj = useSelector(state => state.CarReducer.involvedObj);
-    console.log(".....",involvedObj);
-    useEffect(() => {
-    if(involvedObj){
-        setVal(involvedObj.noOfPassengers);
+  const involvedObj = useSelector(state => state.CarReducer.involvedObj);
+  console.log('.....', involvedObj);
+  useEffect(() => {
+    if (involvedObj) {
+      setVal(involvedObj.noOfPassengers);
     }
-  },[]);
+  }, []);
 
   const PROP1 = [
     {
@@ -62,7 +70,7 @@ const Involved=({navigation})=> {
 
     console.log(val);
 
-    for (let i = 1; i <=val; i++) {
+    for (let i = 1; i <= val; i++) {
       arr.push(i);
     }
 
@@ -94,7 +102,7 @@ const Involved=({navigation})=> {
       noOfPassengers: val,
     };
     console.log(involvedObj);
-    dispatch({type:GET_INVOLVED, payload:involvedObj})
+    dispatch({type: GET_INVOLVED, payload: involvedObj});
     //props.passData(involvedObj);
     navigation.navigate(SUMMARY_PAGE);
   };
@@ -121,7 +129,8 @@ const Involved=({navigation})=> {
                 0345 122 3018
               </Text>
             </Text>
-            <View style={{borderBottomWidth:1,width:"40%",marginBottom:40}}>
+            <View
+              style={{borderBottomWidth: 1, width: '40%', marginBottom: 40}}>
               <Picker
                 style={styles.selectorBox}
                 selectedValue={val}
@@ -140,7 +149,9 @@ const Involved=({navigation})=> {
             {namesArray &&
               namesArray.map((elem, index) => (
                 <View key={index} style={styles.involvedPassengerBox}>
-                  <Text style={styles.passengerName}>{elem}   {addPassObj ? addPassObj.firstName : "No details" }</Text>
+                  <Text style={styles.passengerName}>
+                    {elem} {addPassObj ? addPassObj.firstName : 'No details'}
+                  </Text>
                   <View style={styles.passengerButtonContainer}>
                     <TouchableOpacity
                       style={styles.passengerButton}
@@ -200,7 +211,7 @@ const Involved=({navigation})=> {
       </ScrollView>
     </TouchableWithoutFeedback>
   );
-}
+};
 
 export default Involved;
 
@@ -296,21 +307,23 @@ const styles = StyleSheet.create({
   },
   submitButtonContainer: {
     marginTop: 10,
-    paddingVertical:30
+    paddingVertical: 30,
   },
   continueButton: {
     borderWidth: 1,
-    width: "100%",
+    width: '100%',
     borderColor: '#fff',
     backgroundColor: 'rgb(111, 163,19)',
     // borderRadius: 26,
     flexDirection: 'row',
     justifyContent: 'center',
     paddingVertical: 10,
+    minHeight: 50,
   },
   continueButtonText: {
     color: '#fff',
-    fontSize:16
+    fontSize: 17,
+    fontWeight: '700',
   },
   RadioBtnWrap: {
     alignItems: 'center',

@@ -9,12 +9,14 @@ import {
   Keyboard,
   ScrollView,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {INVOLVED_PAGE} from '../../constants/routeNames';
 import {useDispatch, useSelector} from 'react-redux';
 import {GET_PASSENGERS} from '../../context/actions';
 
 import {Picker} from '@react-native-community/picker';
-const AddPassenger=({navigation})=> {
+const AddPassenger = ({navigation}) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('Mr');
   const [firstName, setFirstName] = useState('');
@@ -31,41 +33,45 @@ const AddPassenger=({navigation})=> {
 
   const {setOptions, toggleDrawer} = useNavigation();
   useEffect(() => {
-      setOptions({
-          headerRight: () => (
-              <TouchableOpacity
-                  // onPress={()=>{toggleDrawer()}}
-              >
-                  <MaterialIcon style={{padding:10}} color="#fff" name="menu" size={25}></MaterialIcon>
-              </TouchableOpacity>
-          ),
-      });
-  }, [])
+    setOptions({
+      headerRight: () => (
+        <TouchableOpacity
+        // onPress={()=>{toggleDrawer()}}
+        >
+          <MaterialIcon
+            style={{padding: 10}}
+            color="#fff"
+            name="menu"
+            size={25}></MaterialIcon>
+        </TouchableOpacity>
+      ),
+    });
+  }, []);
 
   // useEffect(() => {
-    const addPassObj = useSelector(state => state.CarReducer.addPassObj);
-    console.log(".....",addPassObj);
-    useEffect(() => {
-    if(addPassObj){
-        setTitle(addPassObj.title);
-        setFirstName(addPassObj.firstName);
-        setLastName(addPassObj.lastName);
-        setHno(addPassObj.HouseNo);
-        setAddL1(addPassObj.addressLane1);
-        setAddL2(addPassObj.addressLane2);
-        setAddL3(addPassObj.addressLane3);
-        setAddL4(addPassObj.addressLane4);
-        setPostcode(addPassObj.postcode);
-        setHpNo(addPassObj.HousePhone);
-        setMoNo(addPassObj.MobilePhone);
-        setEmail(addPassObj.Email);
+  const addPassObj = useSelector(state => state.CarReducer.addPassObj);
+  console.log('.....', addPassObj);
+  useEffect(() => {
+    if (addPassObj) {
+      setTitle(addPassObj.title);
+      setFirstName(addPassObj.firstName);
+      setLastName(addPassObj.lastName);
+      setHno(addPassObj.HouseNo);
+      setAddL1(addPassObj.addressLane1);
+      setAddL2(addPassObj.addressLane2);
+      setAddL3(addPassObj.addressLane3);
+      setAddL4(addPassObj.addressLane4);
+      setPostcode(addPassObj.postcode);
+      setHpNo(addPassObj.HousePhone);
+      setMoNo(addPassObj.MobilePhone);
+      setEmail(addPassObj.Email);
     }
-  },[]);
+  }, []);
 
   const onSubmit = () => {
     //if(title && firstName && lastName && hno && addL1 && addL2 && addL3 && addL4 && postcode && hpNo && moNo && email != ""){
     let addPassObj = {
-      elementNo : "",  
+      elementNo: '',
       title: title,
       firstName: firstName,
       lastName: lastName,
@@ -81,10 +87,10 @@ const AddPassenger=({navigation})=> {
     };
     console.log(addPassObj);
     console.log('save button is pressed in add passenger page');
-    dispatch({type:GET_PASSENGERS, payload:addPassObj})
+    dispatch({type: GET_PASSENGERS, payload: addPassObj});
     // props.passData(addPassObj); //Dispatch addPassObj
     navigation.navigate(INVOLVED_PAGE);
- // }
+    // }
   };
   const onCancel = () => {
     console.log('cancel button pressed in Add Passenger Page');
@@ -100,14 +106,16 @@ const AddPassenger=({navigation})=> {
           <View style={styles.addPassengerConatiner}>
             <View style={styles.inputContainer}>
               <Text style={styles.inputLabelText}>Title</Text>
-
-              <Picker
-                style={styles.selectorBox}
-                selectedValue={title}
-                onValueChange={e => setTitle(e)}>
-                <Picker.Item label="Mr" value="Mr" />
-                <Picker.Item label="Mrs" value="Mrs" />
-              </Picker>
+              <View
+                style={{borderBottomWidth: 1, width: '30%', marginBottom: 20}}>
+                <Picker
+                  style={styles.selectorBox}
+                  selectedValue={title}
+                  onValueChange={e => setTitle(e)}>
+                  <Picker.Item label="Mr" value="Mr" />
+                  <Picker.Item label="Mrs" value="Mrs" />
+                </Picker>
+              </View>
             </View>
             <View style={styles.inputContainer}>
               <Text style={styles.inputLabelText}>First Name</Text>
@@ -224,8 +232,7 @@ const AddPassenger=({navigation})=> {
       </ScrollView>
     </TouchableWithoutFeedback>
   );
-}
-
+};
 
 export default AddPassenger;
 
@@ -236,40 +243,38 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   addPassengerContainer: {},
-  inputLabelText: {
-    fontSize: 16,
-  },
   input: {
-    borderWidth: 1,
-    borderColor: '#8e419c',
+    borderBottomWidth: 1,
     paddingVertical: 2,
     paddingHorizontal: 10,
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 20,
   },
   inputContainer: {
     // marginBottom: 12,
   },
   selectorBox: {
-    width: '45%',
+    width: '100%',
     borderWidth: 1,
     borderColor: 'black',
     paddingVertical: 2,
     paddingHorizontal: 10,
     marginTop: 10,
-    marginBottom: 10,
+    //marginBottom: 10,
   },
   saveButton: {
     flexDirection: 'row',
     justifyContent: 'center',
     paddingVertical: 10,
-    borderRadius: 26,
+    //borderRadius: 26,
     width: '100%',
     backgroundColor: 'rgb(111, 163,19)',
+    minHeight: 50,
   },
   saveButtonText: {
     color: '#fff',
-    fontSize: 16
+    fontSize: 17,
+    fontWeight: '700',
   },
   inputLabelText: {
     fontWeight: 'bold',
