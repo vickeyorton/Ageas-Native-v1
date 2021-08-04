@@ -1,7 +1,7 @@
 export const HOME_PAGE = "Home";
 export const CLAIM_PAGE = "Claim Details";
-export const AUTH_PAGE = "Authenticator";
-export const SIGNIN_PAGE = "SignIn";
+export const AUTH_PAGE = "User Access";
+export const SIGNIN_PAGE = "Sign In";
 export const HOME_NAVIGATOR = "Home";
 export const INCIDENT_PAGE = "Incident Details";
 export const CONTACT_PAGE = "Contact Details";

@@ -66,7 +66,7 @@ const LoginScreen = ({navigation}) => {
                         placeholder="Email Address"
                     />
                     <View style={{alignItems:"flex-end",marginTop:-5}}>
-                        <Text style={{fontSize:14,color:"#8e419c"}}>Forgot UserMail?</Text>
+                        <Text style={{fontSize:14,color:"#8e419c"}}>Forgot Email Address?</Text>
                     </View>
                     {isValidEmail ? null : (
                         <Text style={styles.errorMsg}>
