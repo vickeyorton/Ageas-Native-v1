@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,13 +9,14 @@ import {
   ScrollView,
   Keyboard,
 } from 'react-native';
+import color from '../../assets/theme/color';
 import {INCIDENT_PAGE, INVOLVED_PAGE} from '../../constants/routeNames';
 import {useSelector, useDispatch} from 'react-redux';
 import {GET_CONTACT} from '../../context/actions';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
-const Contact=({navigation})=> {
+const Contact = ({navigation}) => {
   const dispatch = useDispatch();
   const [mobilePhone, setMobilePhone] = useState('');
   const [homePhone, setHomePhone] = useState('');
@@ -26,29 +27,33 @@ const Contact=({navigation})=> {
   const [isValidMnum, setIsValidMnum] = useState(true);
   const [isValidEmail, setIsValidEmail] = useState(true);
 
-   // useEffect(() => {
-    const contactObj = useSelector(state => state.CarReducer.contactObj);
-    console.log(".....",contactObj);
-    useEffect(() => {
-    if(contactObj){
-        setHomePhone(contactObj.HousePhone);
-        setMobilePhone(contactObj.MobilePhone);
-        setEmail(contactObj.Email);
+  // useEffect(() => {
+  const contactObj = useSelector(state => state.CarReducer.contactObj);
+  console.log('.....', contactObj);
+  useEffect(() => {
+    if (contactObj) {
+      setHomePhone(contactObj.HousePhone);
+      setMobilePhone(contactObj.MobilePhone);
+      setEmail(contactObj.Email);
     }
-  },[]);
+  }, []);
 
   const {setOptions, toggleDrawer} = useNavigation();
-    useEffect(() => {
-        setOptions({
-            headerRight: () => (
-                <TouchableOpacity
-                    // onPress={()=>{toggleDrawer()}}
-                >
-                    <MaterialIcon style={{padding:10}} color="#fff" name="menu" size={25}></MaterialIcon>
-                </TouchableOpacity>
-            ),
-        });
-    }, [])
+  useEffect(() => {
+    setOptions({
+      headerRight: () => (
+        <TouchableOpacity
+        // onPress={()=>{toggleDrawer()}}
+        >
+          <MaterialIcon
+            style={{padding: 10}}
+            color="#fff"
+            name="menu"
+            size={25}></MaterialIcon>
+        </TouchableOpacity>
+      ),
+    });
+  }, []);
 
   const PROP1 = [
     {
@@ -114,7 +119,7 @@ const Contact=({navigation})=> {
       };
       console.log(contactObj);
       console.log('continue button is pressed in contact page');
-      dispatch({type:GET_CONTACT, payload:contactObj})
+      dispatch({type: GET_CONTACT, payload: contactObj});
       // props.passData(contactObj); dispatch contactObj
       navigation.navigate(INVOLVED_PAGE);
     }
@@ -161,7 +166,7 @@ const Contact=({navigation})=> {
               )}
               <View>
                 {mobilePhone != '' && mobilePhone.length == 10 ? (
-                  <View>
+                  <View style={{marginBottom: 10}}>
                     <Text style={styles.question}>
                       Do you need SMS notification to this number?
                     </Text>
@@ -227,7 +232,6 @@ const Contact=({navigation})=> {
             </View>
 
             <View style={styles.submitButtonContainer}>
-              
               <TouchableOpacity
                 style={styles.continueButton}
                 onPress={onContinue}
@@ -241,7 +245,7 @@ const Contact=({navigation})=> {
       </ScrollView>
     </TouchableWithoutFeedback>
   );
-}
+};
 
 export default Contact;
 
@@ -262,16 +266,15 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   inputLable: {
-    fontSize: 12,
-    fontWeight: 'bold',
+    // fontSize: 12,
+    // fontWeight: 'bold',
   },
   input: {
-    borderWidth: 1,
-    borderColor: '#8e419c',
+    borderBottomWidth: 1,
     paddingVertical: 2,
     paddingHorizontal: 10,
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 20,
   },
   selectionButtonNotPressed: {
     flexDirection: 'row',
@@ -285,7 +288,7 @@ const styles = StyleSheet.create({
   buttonTextNotPressed: {
     color: '#8e419c',
     fontSize: 16,
-    fontWeight:"bold"
+    fontWeight: 'bold',
   },
   selectionButtonPressed: {
     flexDirection: 'row',
@@ -301,21 +304,23 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   submitButtonContainer: {
-    marginTop: 10
+    marginTop: 10,
   },
   continueButton: {
     borderWidth: 1,
-    width: "100%",
+    width: '100%',
     borderColor: '#fff',
     backgroundColor: 'rgb(111, 163,19)',
     // borderRadius: 26,
     flexDirection: 'row',
     justifyContent: 'center',
     paddingVertical: 10,
+    minHeight: 50,
   },
   continueButtonText: {
     color: '#fff',
-    fontSize:16
+    fontSize: 17,
+    fontWeight: '700',
   },
   questionContainer: {marginBottom: 10},
   question: {
@@ -328,7 +333,7 @@ const styles = StyleSheet.create({
   errorMsg: {
     color: 'red',
     fontSize: 12,
-    marginTop: -10,
+    marginTop: -20,
   },
   RadioBtnWrap: {
     alignItems: 'center',
