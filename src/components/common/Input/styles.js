@@ -16,6 +16,7 @@ export default StyleSheet.create({
     },
     textInput:{
         flex:1,
+        fontSize:16,
     },
     inputLabel:{
         
