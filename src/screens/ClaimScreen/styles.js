@@ -16,7 +16,8 @@ export default StyleSheet.create({
       label: {
         margin: 8,
         textAlign:"justify",
-        letterSpacing:1,
+        // letterSpacing:1,
+        fontSize:16,
         flex:1
       },
       RadioBtnWrap:{

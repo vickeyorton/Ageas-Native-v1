@@ -70,7 +70,7 @@ const LoginScreen = ({navigation}) => {
                     </View>
                     {isValidEmail ? null : (
                         <Text style={styles.errorMsg}>
-                        *email must contain "@" and ".com"
+                        email must contain "@" and ".com"
                         </Text>
                     )}
                 </View>

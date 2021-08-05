@@ -250,7 +250,7 @@ const IncidentScreen = ({navigation}) => {
                                     </View>
                                 </View>
                             </View>
-                            <View style={{paddingBottom:15}}>
+                            <View style={{paddingBottom:5}}>
                                 <Text style={{fontSize:16}}>Time of incident</Text>
                                 <View style={{flexDirection:"row",width:"60%",justifyContent:"space-between"}}>
                                     <View style={{borderBottomWidth:1}}>    
@@ -345,7 +345,7 @@ const IncidentScreen = ({navigation}) => {
                         </View>
                         <View style={{paddingVertical:20}}>
                             <Text style={{fontSize:18, marginBottom:10}}>Please select your vehicle registration</Text>
-                            <View>
+                            <View style={{flex:1,flexDirection:"row"}}>
                             <TouchableOpacity
                                 style={[styles.regBtn,{backgroundColor:getA1RegBtn()}]}
                                 onPress={()=>{vehicleRegis()}}
@@ -380,8 +380,10 @@ const IncidentScreen = ({navigation}) => {
                             />
                         </View>
                         <View style={{paddingVertical:20}}>
-                            <Text style={{fontSize:18}}>Please tell us what happened (description that best fits the situation)</Text>
+                            <Text style={{fontSize:18}}>Please tell us what happened </Text>
+                            <Text style={{fontSize:16}}>(description that best fits the situation)</Text>
                             <View style={{borderBottomWidth:1,paddingVertical:10}}>
+                                <Text style={{paddingVertical:10,fontSize:16}}>Choose your circumstance</Text>
                                 <Picker
                                     selectedValue={selectedSituation}
                                     style={{ height: 50, width: "100%" ,borderWidth:1,borderColor:"#000"}}

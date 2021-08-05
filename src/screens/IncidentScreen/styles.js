@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     regBtn:{
-        width:"100%",
+        width:"50%",
         paddingVertical:15,
         marginVertical:3,
         borderWidth:1,
