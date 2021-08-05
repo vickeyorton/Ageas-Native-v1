@@ -27,9 +27,6 @@ const Contact = ({navigation}) => {
   const [isValidHnum, setIsValidHnum] = useState(true);
   const [isValidMnum, setIsValidMnum] = useState(true);
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const [focused1,setFocused1] = useState(false);
-  const [focused2,setFocused2] = useState(false);
-  const [focused3,setFocused3] = useState(false);
 
   // useEffect(() => {
   const contactObj = useSelector(state => state.CarReducer.contactObj);
@@ -59,30 +56,6 @@ const Contact = ({navigation}) => {
     });
   }, []);
 
-  const getFocused1 =() =>{
-    if(focused1){
-        return color.purple
-    }
-    else{
-      return color.black
-    }
-}
-const getFocused2 =() =>{
-  if(focused2){
-      return color.purple
-  }
-  else{
-    return color.black
-  }
-}
-const getFocused3 =() =>{
-  if(focused3){
-      return color.purple
-  }
-  else{
-    return color.black
-  }
-}
 
   const PROP1 = [
     {
