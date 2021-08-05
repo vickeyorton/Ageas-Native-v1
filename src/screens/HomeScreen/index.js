@@ -103,24 +103,6 @@ const HomeScreen = ({navigation}) => {
                     <Text style={{paddingVertical:20,fontSize:15,textAlign:"justify"}}>Whether you bought your insurance with Ageas or through an intermediary such as a broker, get in touch using the details below and we’ll get the ball rolling right away.</Text>
                 </View>
                 </ImageBackground>
-                {/* <View style={{position:"absolute",bottom:-22,width:"100%",zIndex:3}}>
-                    <View style={{flex:1,justifyContent:"center",flexDirection:"row",}}>
-                        <View 
-                        onFocus={()=>{setFocused(true)}}
-                        onBlur={()=>{setFocused(false)}}
-                        style={[styles.SearchWrapper]}>
-                            <View style={styles.iconContainer}>
-                                <MaterialIcon style={{padding:10,color:color.purple}} name="search" size={30}></MaterialIcon>
-                            </View>
-                            <TextInput 
-                                style={styles.textInput}
-                                onChangeText={onChangeText}
-                                placeholder="Search"
-                                value={value}
-                            />
-                        </View>
-                    </View>
-                </View> */}
             </View>
             
             <View style={styles.TabWrapper}>
@@ -131,13 +113,13 @@ const HomeScreen = ({navigation}) => {
                     //     <Image style={{width:50,height:50}} source={{uri:data.pic}}/>
                     //     <Text style={{flex:1,justifyContent:"center",textAlign:"center",fontSize:15}}>{data.name}</Text>
                     // </TouchableOpacity>
-                    <TouchableOpacity key={index} style={[styles.tabContainer,{ borderRightWidth: checkIndexIsSix(index) ? 1 : 0},{ borderTopWidth: 0},{width:checkIndexGreaterthan(index) ? "33.33%" : "50%"}]}
+                    <TouchableWithoutFeedback key={index}
                     onPress={()=>{navigation.navigate(CLAIM_PAGE)}}>
-                        
+                        <View style={[styles.tabContainer,{ borderRightWidth: checkIndexIsSix(index) ? 1 : 0},{ borderTopWidth: 0},{width:checkIndexGreaterthan(index) ? "33.33%" : "50%"}]} >
                             <Image style={{width:50,height:50}} source={{uri:data.pic}}/>
                             <Text style={{flex:1,justifyContent:"center",textAlign:"center",fontSize:15}}>{data.name}</Text>
-                        
-                    </TouchableOpacity>
+                        </View>
+                    </TouchableWithoutFeedback>
                     )
                 })}
             </View>

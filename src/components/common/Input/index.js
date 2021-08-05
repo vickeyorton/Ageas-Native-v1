@@ -20,6 +20,8 @@ const Input = ({onChangeText,value,style,placeholder,label, icon, iconPosition,s
     const getFocused =() =>{
         if(focused){
             return color.purple
+        }else{
+            return "#2d2d2d"
         }
     }
     
@@ -38,7 +40,7 @@ const Input = ({onChangeText,value,style,placeholder,label, icon, iconPosition,s
             style={[styles.wrapper,{flexDirection:getFlexDirection()},{borderColor:getFocused()}]}>
                 {icon && <View style={styles.iconContainer}>{ icon}</View>} 
                 <TextInput 
-                    style={styles.textInput}
+                    style={[styles.textInput,{color:getFocused()}]}
                     onChangeText={onChangeText}
                     placeholder={placeholder}
                     value={value}
