@@ -52,7 +52,7 @@ const ClaimScreen = ({navigation}) => {
     <Container style={{padding:20,flex:1,}}>
         <View  style={{}}>
             <View >
-                <Text style={{fontSize:27,fontWeight:"700",color:"#8e419c"}}>How to make a claim</Text>
+                <Text style={{fontSize:27,fontWeight:"700",color:"#8e419c"}}>How to make a Car claim</Text>
             </View>
             <View style={{paddingBottom:30,paddingTop:10}}>
                 <Text style={{fontSize:16}}>Do you think you or the named driver could have been at fault for the incident?</Text>
