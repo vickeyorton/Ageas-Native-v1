@@ -5,18 +5,7 @@ import {HOME_PAGE} from '../../constants/routeNames';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
  const Thankyou=({navigation})=> {
-  const {setOptions, toggleDrawer} = useNavigation();
-  useEffect(() => {
-      setOptions({
-          headerRight: () => (
-              <TouchableOpacity
-                  // onPress={()=>{toggleDrawer()}}
-              >
-                  <MaterialIcon style={{padding:10}} color="#fff" name="menu" size={25}></MaterialIcon>
-              </TouchableOpacity>
-          ),
-      });
-  }, [])
+  
   const route = useRoute();
   const nav = useNavigation();
   useEffect(() => {
@@ -31,12 +20,16 @@ import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
       
       <View style={styles.content}>
         <Text style={styles.para1}>Thank you for submitting your claim,one of our claim handlers will be in touch by the end of the next working day.</Text>
-        <Text style={styles.para2}>The claim number for your policy is : <Text style={styles.policyNum}>4062863N</Text></Text>
-        <Text style={styles.para3}>if you need to contact us please call : <Text style={styles.contact}>03451 122 3018</Text> </Text>
-      </View>
-      <View style={styles.btnCont}>
+        <View style={styles.contentBox}>
+        <Text style={styles.para2}>The claim number for your policy is <Text style={styles.policyNum}>4062863N</Text></Text> 
+       <View style={styles.line1} />
+        <Text style={styles.para3}>If you need to contact us please call  <Text style={styles.contact}>03451 122 3018</Text></Text>
+       </View>
+        <View style={styles.btnCont}>
       <TouchableOpacity onPress={()=>navigation.navigate(HOME_PAGE)} style={styles.homeBtn}><Text style={styles.homeBtnText}>Home</Text></TouchableOpacity>
       </View>
+      </View>
+     
      
     </View>
   );
@@ -49,28 +42,39 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight : 5,
   },
+  line1 : {
+    height: 1,
+    backgroundColor: "black",
+    alignSelf: 'stretch',
+    marginVertical : 10
+  },
  
   content : {
     padding : 10
   },
+  contentBox : {
+    borderWidth : 1,
+    borderColor : "#8e419c",
+    padding : 8,
+    marginVertical : 15
+  },
   para1 : {
-    fontSize : 16,
+    fontSize : 17,
     lineHeight : 25
   },
   para2 : {
-    paddingTop : 14,
-    fontSize : 15
+    fontSize : 17,
+    textAlign : "justify",
+    lineHeight : 25
   },
-  policyNum : {
-    fontWeight : "bold"
-  },
-  para3 : {
-    paddingTop : 13,
-    fontSize : 13
-  },
+ para3 : {
+   fontSize : 17,
+   textAlign : "justify",
+   lineHeight : 25
+ },
+
   contact : {
-    color : "blue",
-    textDecorationLine : "underline"
+    color : "#8e419c"
     
   },
   btnCont:{
@@ -80,21 +84,17 @@ const styles = StyleSheet.create({
   },
   homeBtn:{
     borderWidth: 1,
-    width: "33%",
-    backgroundColor: '#fff',
-    borderColor: '#8e419c',
+    width: "100%",
+    backgroundColor: '#6FA313',
+    borderColor: '#fff',
     // borderRadius: 26,
     flexDirection: 'row',
     justifyContent: 'center',
     paddingVertical: 10,
-    fontSize:16,
-    marginHorizontal:"auto",
-
-
   },
   homeBtnText:{
-    color:"#8e419c",
-    fontSize:16
+    color:"#fff",
+    fontSize:17
 
   }
 

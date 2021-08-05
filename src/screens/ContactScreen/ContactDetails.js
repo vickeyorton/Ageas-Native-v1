@@ -9,6 +9,7 @@ import {
   ScrollView,
   Keyboard,
 } from 'react-native';
+import Input from '../../components/common/Input';
 import color from '../../assets/theme/color';
 import {INCIDENT_PAGE, INVOLVED_PAGE} from '../../constants/routeNames';
 import {useSelector, useDispatch} from 'react-redux';
@@ -26,6 +27,9 @@ const Contact = ({navigation}) => {
   const [isValidHnum, setIsValidHnum] = useState(true);
   const [isValidMnum, setIsValidMnum] = useState(true);
   const [isValidEmail, setIsValidEmail] = useState(true);
+  const [focused1,setFocused1] = useState(false);
+  const [focused2,setFocused2] = useState(false);
+  const [focused3,setFocused3] = useState(false);
 
   // useEffect(() => {
   const contactObj = useSelector(state => state.CarReducer.contactObj);
@@ -54,6 +58,31 @@ const Contact = ({navigation}) => {
       ),
     });
   }, []);
+
+  const getFocused1 =() =>{
+    if(focused1){
+        return color.purple
+    }
+    else{
+      return color.black
+    }
+}
+const getFocused2 =() =>{
+  if(focused2){
+      return color.purple
+  }
+  else{
+    return color.black
+  }
+}
+const getFocused3 =() =>{
+  if(focused3){
+      return color.purple
+  }
+  else{
+    return color.black
+  }
+}
 
   const PROP1 = [
     {
@@ -136,29 +165,32 @@ const Contact = ({navigation}) => {
             <Text style={styles.headingText}>
               Please enter at least one phone number and an email address
             </Text>
-            <View style={styles.numbersContainer}>
-              <Text style={styles.inputLable}>Home telephone number</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="home no"
-                keyboardType="number-pad"
-                onChangeText={e => handleValidHnum(e)}
-                value={homePhone}
-              />
+            <View >
+            
+                            <Input
+                            label="Hometelephone number"
+                            onChangeText={e => handleValidHnum(e)}
+                            value={homePhone}
+                            labelFontSize={16}
+                            keyBoardType={"numeric"}
+                            // placeholder="Street name"
+                            />
+              
               {isValidHnum ? null : (
                 <Text style={styles.errorMsg}>
                   *Mobile number must contain 10 numbers
                 </Text>
               )}
+              <View style={{padding:5}}></View>
+                            <Input
+                            label="Mobile telephone number"
+                            onChangeText={e => handleValidMnum(e)}
+                            value={mobilePhone}
+                            labelFontSize={16}
+                            keyboardType={"numeric"}
+                            // placeholder="Street name"
+                            />
 
-              <Text style={styles.inputLable}>Mobile telephone number</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="mobile no"
-                keyboardType="number-pad"
-                onChangeText={e => handleValidMnum(e)}
-                value={mobilePhone}
-              />
               {isValidMnum ? null : (
                 <Text style={styles.errorMsg}>
                   *Mobile number must contain 10 numbers
@@ -166,7 +198,8 @@ const Contact = ({navigation}) => {
               )}
               <View>
                 {mobilePhone != '' && mobilePhone.length == 10 ? (
-                  <View style={{marginBottom: 10}}>
+                  <View >
+                    <View style={{padding:5}}></View>
                     <Text style={styles.question}>
                       Do you need SMS notification to this number?
                     </Text>
@@ -192,14 +225,15 @@ const Contact = ({navigation}) => {
                   </View>
                 ) : null}
               </View>
-
-              <Text style={styles.inputLable}>Email address*</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="email"
-                onChangeText={e => handleValidEmail(e)}
-                value={email}
-              />
+              <View style={{padding:5}}></View>
+                            <Input
+                            label="Email address"
+                            onChangeText={e => handleValidEmail(e)}
+                            value={email}
+                            labelFontSize={16}
+                            
+                            // placeholder="Street name"
+                            />
               {isValidEmail ? null : (
                 <Text style={styles.errorMsg}>
                   *email must contain "@" and ".com"
@@ -207,8 +241,10 @@ const Contact = ({navigation}) => {
               )}
             </View>
             <View>
-              <Text style={styles.headingText}>
-                Who was the last drive of the vehicle?*
+            <View style={{padding:5}}></View>
+            <View style={{padding:5}}></View>
+              <Text style={styles.question}>
+                Who was the last drive of the vehicle?
               </Text>
               <View style={styles.RadioBtnWrap}>
                 {PROP2.map(res => {
@@ -260,21 +296,22 @@ const styles = StyleSheet.create({
     fontFamily: '',
     fontSize: 18,
     fontWeight: 'normal',
-    marginBottom: 12,
+    marginBottom: 10,
   },
-  numbersContainer: {
-    marginBottom: 12,
-  },
+  // numbersContainer: {
+  //   marginBottom: 12,
+  // },
   inputLable: {
-    // fontSize: 12,
+     fontSize: 16,
     // fontWeight: 'bold',
   },
   input: {
     borderBottomWidth: 1,
-    paddingVertical: 2,
+    paddingVertical: 4,
     paddingHorizontal: 10,
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: 5,
+    marginBottom: 30,
+    color: "black"
   },
   selectionButtonNotPressed: {
     flexDirection: 'row',
@@ -316,6 +353,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 10,
     minHeight: 50,
+    marginTop:10
   },
   continueButtonText: {
     color: '#fff',
@@ -324,8 +362,8 @@ const styles = StyleSheet.create({
   },
   questionContainer: {marginBottom: 10},
   question: {
-    fontSize: 14,
-    marginBottom: 10,
+    fontSize: 15,
+    marginBottom: 12,
   },
   questionButton: {
     borderRadius: 26,
@@ -333,7 +371,7 @@ const styles = StyleSheet.create({
   errorMsg: {
     color: 'red',
     fontSize: 12,
-    marginTop: -20,
+    marginTop: -5,
   },
   RadioBtnWrap: {
     alignItems: 'center',
@@ -345,7 +383,7 @@ const styles = StyleSheet.create({
   RadioBtnContainer: {
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
   radioText: {
     color: '#000',

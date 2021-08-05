@@ -124,13 +124,15 @@ const Involved = ({navigation}) => {
               How many passengers were in your vehicle?
             </Text>
             <Text style={styles.numText}>
-              If there were more than 5 passengers in your vehicle.please call :
+              (If there were more than 5 passengers in your vehicle, please call :
+              <Text> </Text> 
               <Text onPress={onCall} style={styles.callNum}>
-                0345 122 3018
+                 0345 122 3018 
               </Text>
+              <Text> )</Text>
             </Text>
             <View
-              style={{borderBottomWidth: 1, width: '40%', marginBottom: 40}}>
+              style={{borderBottomWidth: 1, width: '40%', marginBottom: 20}}>
               <Picker
                 style={styles.selectorBox}
                 selectedValue={val}
@@ -148,9 +150,11 @@ const Involved = ({navigation}) => {
             </Text>
             {namesArray &&
               namesArray.map((elem, index) => (
+                
                 <View key={index} style={styles.involvedPassengerBox}>
+                  <Text style={{marginRight:20}}>{elem}.</Text> 
                   <Text style={styles.passengerName}>
-                    {elem} {addPassObj ? addPassObj.firstName : 'No details'}
+                  {addPassObj ? addPassObj.firstName : 'No details'}
                   </Text>
                   <View style={styles.passengerButtonContainer}>
                     <TouchableOpacity
@@ -170,7 +174,7 @@ const Involved = ({navigation}) => {
               style={{
                 borderBottomColor: '#666',
                 borderBottomWidth: 1,
-                marginBottom: 40,
+                marginBottom: 20,
               }}
             />
             <Text style={styles.headText}>Their Vehicle</Text>
@@ -240,8 +244,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   callNum: {
-    color: 'blue',
-    textDecorationLine: 'underline',
+    color: '#8e419c',
   },
   selectorBox: {
     // width: '45%',
@@ -360,4 +363,12 @@ const styles = StyleSheet.create({
     // borderColor:"#8e419c",
     // borderWidth:10,
   },
+  passengerName :{
+    fontSize:16
+  },
+  passCont:{
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems:'center',
+  }
 });

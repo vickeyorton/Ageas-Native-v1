@@ -66,7 +66,7 @@ const Summary = ({navigation}) => {
           {showIncident ? (
             <View style={{padding: 8}}>
               <View style={{marginBottom: 9}}>
-                <Text>Date and Time</Text>
+                <Text style={{fontSize : 17}}>Date and Time</Text>
                 {/* <Text style={styles.value}>11/08/2021 and 11:20</Text> */}
                 <Text style={styles.value}>
                   {incident ? incident.date : 'DD'}/
@@ -77,14 +77,14 @@ const Summary = ({navigation}) => {
                 </Text>
               </View>
               <View style={{marginBottom: 9}}>
-                <Text>Vehicle Registration</Text>
+                <Text style={{fontSize : 17}}>Vehicle Registration</Text>
                 <Text style={styles.value}>
                   {' '}
                   {incident ? incident.vehicleReg : '-'}
                 </Text>
               </View>
               <View style={{marginBottom: 9}}>
-                <Text>Circumstance</Text>
+                <Text style={{fontSize : 17}}>Circumstance</Text>
                 <Text style={styles.value}>
                   {incident ? incident.situation : '-'}
                 </Text>
@@ -117,19 +117,19 @@ const Summary = ({navigation}) => {
           {showContact ? (
             <View style={{padding: 8}}>
               <View style={{marginBottom: 9}}>
-                <Text>Home Telephone</Text>
+                <Text style={{fontSize : 17}}>Home Telephone</Text>
                 <Text style={styles.value}>
                   {contactObj ? contactObj.HousePhone : '-'}
                 </Text>
               </View>
               <View style={{marginBottom: 9}}>
-                <Text>Mobile Telephone</Text>
+                <Text style={{fontSize : 17}}>Mobile Telephone</Text>
                 <Text style={styles.value}>
                   {contactObj ? contactObj.MobilePhone : '-'}
                 </Text>
               </View>
               <View style={{marginBottom: 9}}>
-                <Text>Email</Text>
+                <Text style={{fontSize : 17}}>Email</Text>
                 <Text style={styles.value}>
                   {contactObj ? contactObj.Email : '-'}
                 </Text>
@@ -160,25 +160,25 @@ const Summary = ({navigation}) => {
 
           {showInvolved ? (
             <View style={{padding: 8}}>
-              <Text>Your vehicle</Text>
+              <Text style={[{fontSize : 17},{marginBottom:5},{fontWeight:"bold"}]}>Your vehicle</Text>
               <View style={styles.subSectionInvolved}>
-                <Text style={styles.property}>No of passengers</Text>
+                <Text style={{fontSize : 16}}>No of passengers</Text>
                 {/* <Text style={styles.value}>{involved ? involved.noOfPassengers : "N/A"}</Text> */}
                 <Text style={styles.value}>
                   {involvedObj ? involvedObj.noOfPassengers : '-'}
                 </Text>
               </View>
-              <Text>Their vehicle</Text>
+              <Text style={[{fontSize : 17},{marginBottom:5},{fontWeight:"bold"}]}>Their vehicle</Text>
               <View style={styles.subSectionInvolved}>
-                <Text style={styles.property}>Registration</Text>
+                <Text style={{fontSize : 16}}>Registration</Text>
                 <Text style={styles.value}>NA</Text>
               </View>
               <View style={styles.subSectionInvolved}>
-                <Text>Driver name</Text>
+                <Text style={{fontSize : 16}}>Driver name</Text>
                 <Text style={styles.value}>daniel</Text>
               </View>
               <View style={styles.subSectionInvolved}>
-                <Text style={styles.property}>No of passengers</Text>
+                <Text style={{fontSize : 16}}>No of passengers</Text>
                 {/* <Text style={styles.value}>{involved ? involved.noOfPassengers : "N/A"}</Text> */}
                 <Text style={styles.value}>
                   {involvedObj ? involvedObj.noOfPassengers : '-'}
@@ -233,8 +233,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   value: {
-    fontSize: 12,
-    fontWeight: 'bold',
+    fontSize: 15,
   },
   editSection: {
     borderWidth: 1,

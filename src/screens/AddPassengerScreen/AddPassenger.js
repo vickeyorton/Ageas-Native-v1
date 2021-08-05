@@ -9,6 +9,7 @@ import {
   Keyboard,
   ScrollView,
 } from 'react-native';
+import Input from '../../components/common/Input';
 import {useNavigation} from '@react-navigation/native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import {INVOLVED_PAGE} from '../../constants/routeNames';
@@ -30,6 +31,7 @@ const AddPassenger = ({navigation}) => {
   const [hpNo, setHpNo] = useState('');
   const [moNo, setMoNo] = useState('');
   const [email, setEmail] = useState('');
+
 
   const {setOptions, toggleDrawer} = useNavigation();
   useEffect(() => {
@@ -67,6 +69,7 @@ const AddPassenger = ({navigation}) => {
       setEmail(addPassObj.Email);
     }
   }, []);
+
 
   const onSubmit = () => {
     //if(title && firstName && lastName && hno && addL1 && addL2 && addL3 && addL4 && postcode && hpNo && moNo && email != ""){
@@ -107,7 +110,7 @@ const AddPassenger = ({navigation}) => {
             <View style={styles.inputContainer}>
               <Text style={styles.inputLabelText}>Title</Text>
               <View
-                style={{borderBottomWidth: 1, width: '30%', marginBottom: 20}}>
+                style={{borderBottomWidth: 1, width: '30%', marginBottom: 15}}>
                 <Picker
                   style={styles.selectorBox}
                   selectedValue={title}
@@ -117,109 +120,95 @@ const AddPassenger = ({navigation}) => {
                 </Picker>
               </View>
             </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabelText}>First Name</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="first name"
-                onChangeText={e => setFirstName(e)}
-                value={firstName}
-              />
-            </View>
-
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabelText}>LastName</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="last name"
-                onChangeText={e => setLastName(e)}
-                value={lastName}
-              />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabelText}>House number or name</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="home no"
-                onChangeText={e => setHno(e)}
-                value={hno}
-              />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabelText}>Address line 1</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="address line 1"
-                onChangeText={e => setAddL1(e)}
-                value={addL1}
-              />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabelText}>Address line 2</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="address line 2"
-                onChangeText={e => setAddL2(e)}
-                value={addL2}
-              />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabelText}>Address line 3</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="address line 3"
-                onChangeText={e => setAddL3(e)}
-                value={addL3}
-              />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabelText}>Address line 4</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="address line 4"
-                onChangeText={e => setAddL4(e)}
-                value={addL4}
-              />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabelText}>Postcode</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="postcode"
-                keyboardType="number-pad"
-                onChangeText={e => setPostcode(e)}
-                value={postcode}
-              />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabelText}>Home telephone number</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="home phone no"
-                keyboardType="number-pad"
-                onChangeText={e => setHpNo(e)}
-                value={hpNo}
-              />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabelText}>Mobile telephone number</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="mobile phone no"
-                keyboardType="number-pad"
-                onChangeText={e => setMoNo(e)}
-                value={moNo}
-              />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputLabelText}>Email Address</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="email address"
-                onChangeText={e => setEmail(e)}
-                value={email}
-              />
-            </View>
+            <View style={{padding:5}}></View>
+                            <Input
+                            label="First Name"
+                            onChangeText={e => setFirstName(e)}
+                            value={firstName}
+                            labelFontSize={16}
+                            
+                            // placeholder="Street name"
+                            />
+                            <View style={{padding:5}}></View>
+                            <Input
+                            label="Last Name"
+                            onChangeText={e => setLastName(e)}
+                            value={lastName}
+                            labelFontSize={16}
+                            // placeholder="Town name"
+                            />
+                            <View style={{padding:5}}></View>
+                            <Input
+                            label="House number or name"
+                            onChangeText={e => setHno(e)}
+                            value={hno}
+                            labelFontSize={16}
+                            // placeholder="Town name"
+                            />
+                            <View style={{padding:5}}></View>
+                            <Input
+                            label="Address line 1"
+                            onChangeText={e => setAddL1(e)}
+                            value={addL1}
+                            labelFontSize={16}
+                            // placeholder="Street name"
+                            />
+                            <View style={{padding:5}}></View>
+                            <Input
+                            label="Address line 2"
+                            onChangeText={e => setAddL2(e)}
+                            value={addL2}
+                            labelFontSize={16}
+                            // placeholder="Town name"
+                            />
+                            <View style={{padding:5}}></View>
+                            <Input
+                            label="Address line 3"
+                            onChangeText={e => setAddL3(e)}
+                            value={addL3}
+                            labelFontSize={16}
+                            // placeholder="Street name"
+                            />
+                            <View style={{padding:5}}></View>
+                            <Input
+                            label="Address line 4"
+                            onChangeText={e => setAddL4(e)}
+                            value={addL4}
+                            labelFontSize={16}
+                            // placeholder="Town name"
+                            />
+                            <View style={{padding:5}}></View>
+                            <Input
+                            label="Postcode"
+                            onChangeText={e => setPostcode(e)}
+                            value={postcode}
+                            labelFontSize={16}
+                            // placeholder="Street name"
+                            />
+                            <View style={{padding:5}}></View>
+                            <Input
+                            label="Home telephone number"
+                            onChangeText={e => setHpNo(e)}
+                            value={hpNo}
+                            labelFontSize={16}
+                            // placeholder="Town name"
+                            />
+                            <View style={{padding:5}}></View>
+                            <Input
+                            label="Mobile telephone number"
+                            onChangeText={e => setMoNo(e)}
+                            value={moNo}
+                            labelFontSize={16}
+                            // placeholder="Street name"
+                            />
+                            <View style={{padding:5}}></View>
+                            <Input
+                            label="Email Address"
+                            onChangeText={e => setEmail(e)}
+                            value={email}
+                            labelFontSize={16}
+                            // placeholder="Town name"
+                            />
             <View style={styles.bottomButtons}>
               <TouchableOpacity
                 style={styles.saveButton}
@@ -245,10 +234,11 @@ const styles = StyleSheet.create({
   addPassengerContainer: {},
   input: {
     borderBottomWidth: 1,
-    paddingVertical: 2,
+    paddingVertical: 4,
     paddingHorizontal: 10,
-    marginTop: 10,
-    marginBottom: 20,
+    marginTop: 5,
+    marginBottom: 30,
+    color: "black"
   },
   inputContainer: {
     // marginBottom: 12,
@@ -259,7 +249,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     paddingVertical: 2,
     paddingHorizontal: 10,
-    marginTop: 10,
+    //marginTop: 5,
     //marginBottom: 10,
   },
   saveButton: {
@@ -277,7 +267,8 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   inputLabelText: {
-    fontWeight: 'bold',
+    //fontWeight: 'bold',
+    fontSize:16
   },
   bottomButtons: {
     flexDirection: 'row',
