@@ -1,11 +1,11 @@
 export const HOME_PAGE = "Home";
-export const CLAIM_PAGE = "Car Claim Details";
+export const CLAIM_PAGE = "Car claim details";
 export const AUTH_PAGE = "Welcome";
-export const SIGNIN_PAGE = "Sign In";
+export const SIGNIN_PAGE = "Sign in";
 export const HOME_NAVIGATOR = "Home";
-export const INCIDENT_PAGE = "Incident Details";
-export const CONTACT_PAGE = "Contact Details";
-export const INVOLVED_PAGE = "Involved Parties Details";
-export const ADDPASSENGER_PAGE = "Add Passenger Details"
+export const INCIDENT_PAGE = "Incident details";
+export const CONTACT_PAGE = "Contact details";
+export const INVOLVED_PAGE = "Involved parties details";
+export const ADDPASSENGER_PAGE = "Add passenger details"
 export const SUMMARY_PAGE = "Summary";
 export const THANKYOU_PAGE ="Thank you";

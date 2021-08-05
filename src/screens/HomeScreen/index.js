@@ -99,8 +99,9 @@ const HomeScreen = ({navigation}) => {
             <View style={styles.BgImageContainer}>
                 <ImageBackground source={image} resizeMode="cover" style={styles.image}>
                 <View style={styles.BgOverlay}>
-                    <Text style={{fontSize:27,fontWeight:"700",color:"#8e419c",textAlign:"justify"}}>Goodbye exhausting claims</Text>
-                    <Text style={{paddingVertical:20,fontSize:15,textAlign:"justify"}}>Whether you bought your insurance with Ageas or through an intermediary such as a broker, get in touch using the details below and we’ll get the ball rolling right away.</Text>
+                    <Text style={{fontSize:34,fontWeight:"700",color:"#8e419c",textAlign:"justify"}}>Goodbye </Text>
+                    <Text style={{fontSize:25,fontWeight:"700",color:"#8e419c",textAlign:"justify"}}>exhausting claims</Text>
+                    <Text style={{paddingVertical:15,fontSize:15,textAlign:"justify"}}>Whether you bought your insurance with Ageas or through an intermediary such as a broker, get in touch using the details below and we’ll get the ball rolling right away.</Text>
                 </View>
                 </ImageBackground>
             </View>
