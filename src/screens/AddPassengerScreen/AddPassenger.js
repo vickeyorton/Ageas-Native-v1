@@ -191,6 +191,7 @@ const AddPassenger = ({navigation}) => {
                             onChangeText={e => setHpNo(e)}
                             value={hpNo}
                             labelFontSize={16}
+                            keyboardType={"numeric"}
                             // placeholder="Town name"
                             />
                             <View style={{padding:5}}></View>
@@ -199,6 +200,7 @@ const AddPassenger = ({navigation}) => {
                             onChangeText={e => setMoNo(e)}
                             value={moNo}
                             labelFontSize={16}
+                            keyboardType={"numeric"}
                             // placeholder="Street name"
                             />
                             <View style={{padding:5}}></View>

@@ -172,7 +172,7 @@ const getFocused3 =() =>{
                             onChangeText={e => handleValidHnum(e)}
                             value={homePhone}
                             labelFontSize={16}
-                            keyBoardType={"numeric"}
+                            keyboardType={"numeric"}
                             // placeholder="Street name"
                             />
               
