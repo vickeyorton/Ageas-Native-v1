@@ -1,6 +1,6 @@
 export const HOME_PAGE = "Home";
 export const CLAIM_PAGE = "Car Claim Details";
-export const AUTH_PAGE = "User Access";
+export const AUTH_PAGE = "Welcome";
 export const SIGNIN_PAGE = "Sign In";
 export const HOME_NAVIGATOR = "Home";
 export const INCIDENT_PAGE = "Incident Details";

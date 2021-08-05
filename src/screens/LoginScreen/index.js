@@ -97,7 +97,7 @@ const LoginScreen = ({navigation}) => {
                     <Text style={{fontSize:12,color:"#8e419c",fontWeight:"700"}}>I am a new user </Text>
                     <Text style={{fontSize:13,color:"#8e419c",fontWeight:"700"}}> Sign Up</Text>
                 </View> */}
-                <View style={{flexDirection:"row",justifyContent:"center",flex:1}}>
+                {/* <View style={{flexDirection:"row",justifyContent:"center",flex:1}}>
                         <View style={{paddingVertical:0 ,flexDirection:"row",justifyContent:"center"}}>
                             <CustomBtn 
                             bgColor="#fff" color={color.success} 
@@ -106,7 +106,7 @@ const LoginScreen = ({navigation}) => {
                             // onPress={onPress}
                             />
                         </View>
-                    </View>
+                    </View> */}
             </View>
         </View>
         {/* <View  style={{backgroundColor:"#8e419c", padding:20}}>
