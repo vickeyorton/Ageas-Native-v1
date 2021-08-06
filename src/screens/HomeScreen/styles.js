@@ -3,13 +3,14 @@ import color from "../../assets/theme/color";
 export default StyleSheet.create({
     BgImageContainer:{
         flex: 1,
-        height:300,
+        minHeight:300,
         position:"relative"
     },
     image: {
         flex: 1,
         justifyContent: "flex-end",
-        height:300,
+        height:"100%",
+        minHeight:300,
     },
     BgOverlay: {
         backgroundColor: "#fad5fcc0",
