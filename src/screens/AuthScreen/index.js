@@ -47,7 +47,7 @@ const AuthScreen = ({navigation}) => {
                         <View style={{paddingVertical:10 ,flexDirection:"row",justifyContent:"center"}}>
                             <CustomBtn 
                             bgColor={color.success} color="#fff" 
-                            borderColor={color.success} title="Sign In" 
+                            borderColor={color.success} title="Sign in" 
                             width="100%" margin="auto"
                             onPress={()=>{navigation.navigate(SIGNIN_PAGE)}}
                             
@@ -58,7 +58,7 @@ const AuthScreen = ({navigation}) => {
                         <View style={{paddingVertical:10 ,flexDirection:"row",justifyContent:"center"}}>
                             <CustomBtn 
                             bgColor="#fff" color={color.success} 
-                            borderColor={color.success} title="Sign Up" 
+                            borderColor={color.success} title="Sign up" 
                             width="100%" margin="auto"
                             // onPress={onPress}
                             />

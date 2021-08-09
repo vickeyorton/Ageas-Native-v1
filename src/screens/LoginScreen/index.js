@@ -60,13 +60,13 @@ const LoginScreen = ({navigation}) => {
                 <Text style={{paddingVertical:5}}>We know making a claim can be a stressful time, so we’re here to help every step of the way and get things back to normal for you, quick smart. Please record your claim through the form below and we'll get in touch as soon as possible.</Text> */}
                 <View style={styles.inputSpace}>
                     <Input
-                        label="Email Address"
+                        label="Email address"
                         onChangeText={(e)=>{handleValidEmail(e)}}
                         value={value}
                         // placeholder="Email Address"
                     />
                     <View style={{alignItems:"flex-end",marginTop:-5}}>
-                        <Text style={{fontSize:14,color:"#8e419c"}}>Forgot Email Address?</Text>
+                        <Text style={{fontSize:14,color:"#8e419c"}}>Forgot email address?</Text>
                     </View>
                     {isValidEmail ? null : (
                         <Text style={styles.errorMsg}>
@@ -85,11 +85,11 @@ const LoginScreen = ({navigation}) => {
                         secureTextEntry={true}
                     />
                     <View style={{alignItems:"flex-end",marginTop:-5}}>
-                        <Text style={{fontSize:14,color:"#8e419c"}}>Forgot Password?</Text>
+                        <Text style={{fontSize:14,color:"#8e419c"}}>Forgot password?</Text>
                     </View>
                 </View>
                 <View style={{marginVertical:15}}>
-                    <CustomBtn bgColor={color.success} color="#fff" borderColor={color.success} title="Sign In" 
+                    <CustomBtn bgColor={color.success} color="#fff" borderColor={color.success} title="Sign in" 
                     onPress={()=>{signIn()}}
                     />
                 </View>
