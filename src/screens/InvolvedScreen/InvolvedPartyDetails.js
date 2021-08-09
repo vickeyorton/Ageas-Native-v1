@@ -118,7 +118,7 @@ const Involved = ({navigation}) => {
             <Text style={styles.headText}>Your Vehicle</Text>
             <Text style={styles.lableText}>
               The vehicle on this policy is:{' '}
-              <Text style={styles.strong}>A1</Text>
+              <Text style={[styles.strong, {color:'#8e419c'} ]}>A1</Text>
             </Text>
             <Text style={styles.lableText}>
               How many passengers were in your vehicle?
@@ -145,9 +145,9 @@ const Involved = ({navigation}) => {
                 <Picker.Item label="5" value="5" />
               </Picker>
             </View>
-            <Text style={styles.lableText}>
+            {/* <Text style={styles.lableText}>
               Please enter the details of your passengers where known
-            </Text>
+            </Text> */}
             {namesArray &&
               namesArray.map((elem, index) => (
                 
@@ -242,6 +242,7 @@ const styles = StyleSheet.create({
   numText: {
     fontSize: 14,
     marginBottom: 12,
+    marginTop:-7
   },
   callNum: {
     color: '#8e419c',

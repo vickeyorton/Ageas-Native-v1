@@ -66,7 +66,7 @@ const Summary = ({navigation}) => {
           {showIncident ? (
             <View style={{padding: 8}}>
               <View style={{marginBottom: 9}}>
-                <Text style={{fontSize : 17}}>Date and Time</Text>
+                <Text style={{fontSize : 17}}>Date and time</Text>
                 {/* <Text style={styles.value}>11/08/2021 and 11:20</Text> */}
                 <Text style={styles.value}>
                   {incident ? incident.date : 'DD'}/
@@ -77,7 +77,7 @@ const Summary = ({navigation}) => {
                 </Text>
               </View>
               <View style={{marginBottom: 9}}>
-                <Text style={{fontSize : 17}}>Vehicle Registration</Text>
+                <Text style={{fontSize : 17}}>Vehicle registration</Text>
                 <Text style={styles.value}>
                   {' '}
                   {incident ? incident.vehicleReg : '-'}
@@ -117,19 +117,19 @@ const Summary = ({navigation}) => {
           {showContact ? (
             <View style={{padding: 8}}>
               <View style={{marginBottom: 9}}>
-                <Text style={{fontSize : 17}}>Home Telephone</Text>
+                <Text style={{fontSize : 17}}>Home telephone number</Text>
                 <Text style={styles.value}>
                   {contactObj ? contactObj.HousePhone : '-'}
                 </Text>
               </View>
               <View style={{marginBottom: 9}}>
-                <Text style={{fontSize : 17}}>Mobile Telephone</Text>
+                <Text style={{fontSize : 17}}>Mobile number</Text>
                 <Text style={styles.value}>
                   {contactObj ? contactObj.MobilePhone : '-'}
                 </Text>
               </View>
               <View style={{marginBottom: 9}}>
-                <Text style={{fontSize : 17}}>Email</Text>
+                <Text style={{fontSize : 17}}>Email address</Text>
                 <Text style={styles.value}>
                   {contactObj ? contactObj.Email : '-'}
                 </Text>
@@ -147,7 +147,7 @@ const Summary = ({navigation}) => {
           ) : null}
           <View style={styles.line} />
           <View style={styles.incidentSection}>
-            <Text style={{fontSize: 18}}>Involved Parties details</Text>
+            <Text style={{fontSize: 18}}>Involved parties details</Text>
 
             <TouchableOpacity onPress={() => setShowInvolved(!showInvolved)}>
               {showInvolved ? (

@@ -107,6 +107,9 @@ const AddPassenger = ({navigation}) => {
       <ScrollView>
         <View style={styles.addPassengerScreen}>
           <View style={styles.addPassengerConatiner}>
+          <Text style={styles.headingText}>
+              Please enter the details of your passengers where known
+            </Text>
             <View style={styles.inputContainer}>
               <Text style={styles.inputLabelText}>Title</Text>
               <View
@@ -205,7 +208,7 @@ const AddPassenger = ({navigation}) => {
                             />
                             <View style={{padding:5}}></View>
                             <Input
-                            label="Email Address"
+                            label="Email address"
                             onChangeText={e => setEmail(e)}
                             value={email}
                             labelFontSize={16}
@@ -234,6 +237,12 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   addPassengerContainer: {},
+  headingText: {
+    fontFamily: '',
+    fontSize: 18,
+    fontWeight: 'normal',
+    marginBottom: 15,
+  },
   input: {
     borderBottomWidth: 1,
     paddingVertical: 4,

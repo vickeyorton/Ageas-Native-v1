@@ -21,9 +21,9 @@ import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
       <View style={styles.content}>
         <Text style={styles.para1}>Thank you for submitting your claim,one of our claim handlers will be in touch by the end of the next working day.</Text>
         <View style={styles.contentBox}>
-        <Text style={styles.para2}>The claim number for your policy is <Text style={styles.policyNum}>4062863N</Text></Text> 
+        <Text style={styles.para2}>The claim number for your policy is <Text style={[styles.policyNum,{color:'#8e419c'}]}>4062863N</Text></Text> 
        <View style={styles.line1} />
-        <Text style={styles.para3}>If you need to contact us please call  <Text style={styles.contact}>03451 122 3018</Text></Text>
+        <Text style={styles.para3}>If you need to contact us please call {"\n"} <Text style={styles.contact}>03451 122 3018</Text></Text>
        </View>
         <View style={styles.btnCont}>
       <TouchableOpacity onPress={()=>navigation.navigate(HOME_PAGE)} style={styles.homeBtn}><Text style={styles.homeBtnText}>Home</Text></TouchableOpacity>
@@ -64,12 +64,10 @@ const styles = StyleSheet.create({
   },
   para2 : {
     fontSize : 17,
-    textAlign : "justify",
     lineHeight : 25
   },
  para3 : {
    fontSize : 17,
-   textAlign : "justify",
    lineHeight : 25
  },
 

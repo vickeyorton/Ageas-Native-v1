@@ -141,7 +141,7 @@ const Contact = ({navigation}) => {
             <View >
             
                             <Input
-                            label="Hometelephone number"
+                            label="Home telephone number"
                             onChangeText={e => handleValidHnum(e)}
                             value={homePhone}
                             labelFontSize={16}
@@ -173,6 +173,13 @@ const Contact = ({navigation}) => {
                 {mobilePhone != '' && mobilePhone.length == 10 ? (
                   <View >
                     <View style={{padding:5}}></View>
+                    {/* <View
+              style={{
+                borderBottomColor: '#666',
+                borderBottomWidth: 1,
+                marginBottom: 20,
+              }}
+            /> */}
                     <Text style={styles.question}>
                       Do you need SMS notification to this number?
                     </Text>
@@ -214,7 +221,7 @@ const Contact = ({navigation}) => {
               )}
             </View>
             <View>
-            <View style={{padding:5}}></View>
+            
             <View style={{padding:5}}></View>
               <Text style={styles.question}>
                 Who was the last drive of the vehicle?
@@ -241,6 +248,7 @@ const Contact = ({navigation}) => {
             </View>
 
             <View style={styles.submitButtonContainer}>
+            <View style={{padding:5}}></View>
               <TouchableOpacity
                 style={styles.continueButton}
                 onPress={onContinue}
@@ -336,7 +344,8 @@ const styles = StyleSheet.create({
   questionContainer: {marginBottom: 10},
   question: {
     fontSize: 15,
-    marginBottom: 12,
+    marginBottom: 5,
+    marginTop: 12
   },
   questionButton: {
     borderRadius: 26,
