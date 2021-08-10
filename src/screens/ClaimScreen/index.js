@@ -92,9 +92,7 @@ const ClaimScreen = ({navigation}) => {
                 : null
             }
             {driverIssue === "Yes" && q1isEnabled &&
-                <View style={[{borderBottomWidth:1,
-                    borderColor:"#000",
-                    paddingTop:15},styles.qContainer]}>
+                <View style={[styles.borderBottom,styles.qContainer]}>
                     <Text style={{width:"75%",fontSize:16,textAlign:"justify",}}>Was anybody injured as a result of the incident or did it involve a pedestrain, a pedal cyclist or a motor cyclist?</Text>
                     <View style={{alignItems:"flex-end",flex:1}}>
                         <Switch
