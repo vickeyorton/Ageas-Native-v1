@@ -344,7 +344,7 @@ const IncidentScreen = ({navigation}) => {
                             </View>
                         </View>
                         <View style={{paddingVertical:20}}>
-                            <Text style={{fontSize:18, marginBottom:10}}>Please select your vehicle registration</Text>
+                            <Text style={{fontSize:18, marginBottom:10}}>Please select your vehicle registered</Text>
                             <View style={{flex:1,flexDirection:"row"}}>
                             <TouchableOpacity
                                 style={[styles.regBtn,{backgroundColor:getA1RegBtn()}]}
