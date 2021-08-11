@@ -42,7 +42,7 @@ const IncidentScreen = ({navigation}) => {
     const [town, onChangeTown] = useState(null);
     const [a1,setA1] = useState(true);
     const [other,setOther] = useState(false);
-    const [vehicleReg, setVehicleReg] = useState("A1");
+    const [vehicleReg, setVehicleReg] = useState("SN67 ANX");
     
 
     // useEffect(() => {
@@ -350,7 +350,7 @@ const IncidentScreen = ({navigation}) => {
                                 style={[styles.regBtn,{backgroundColor:getA1RegBtn()}]}
                                 onPress={()=>{vehicleRegis()}}
                             >
-                                <Text style={[styles.regBtnText,{color:getA1RegText()}]}>A1</Text>
+                                <Text style={[styles.regBtnText,{color:getA1RegText()}]}>SN67 ANX</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
                                 style={[styles.regBtn,{backgroundColor:getOtherRegBtn()}]}

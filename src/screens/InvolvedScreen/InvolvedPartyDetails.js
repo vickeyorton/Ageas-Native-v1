@@ -118,7 +118,7 @@ const Involved = ({navigation}) => {
             <Text style={styles.headText}>Your Vehicle</Text>
             <Text style={styles.lableText}>
               The vehicle on this policy is:{' '}
-              <Text style={[styles.strong, {color:'#8e419c'} ]}>A1</Text>
+              <Text style={[styles.strong, {color:'#8e419c'} ]}>SN67 ANX</Text>
             </Text>
             <Text style={styles.lableText}>
               How many passengers were in your vehicle?
